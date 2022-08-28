@@ -1,0 +1,71 @@
+constructor:
+============
+def: special member function
+purpose: initialization
+super: inbuilt object of super class
+this: inbuilt object of current class
+state: json object
+syntax:
+import React from 'react'
+class classname extends React.Component
+{
+  constructor()
+  {
+   super();
+   this.state={key1:val1,key2:val2,...};
+  }
+  render()
+  {
+
+	return <h1>{this.state.key}</h1>;
+  }
+}
+export default Classname;
+
+index.js file
+=============
+import Classname from './App';
+<Classname />
+
+
+React Properties:
+=================
+use: to passing argument values
+import React from 'react'
+class classname extends React.Compnent
+{
+  constructor(props)
+  {
+   super(props);
+  }
+   
+  render()
+  {
+	return <h1>{this.props.name}</h1>;
+
+  }
+}
+export default classname;
+
+index.js
+========
+import classname from './App';
+ReactDOM.Render(<classname name=value/>,);
+
+
+====================================
+event management - button click
+state management - change state(set)
+arrow function:
+==============
+functionname=()=>{
+this.setState({name:value});
+}
+
+<button onClick={this.functionname}>
+Clickme</button>
+
+note:
+-button should be return block
+-arrow function should be inside  class 
+(not render,return)

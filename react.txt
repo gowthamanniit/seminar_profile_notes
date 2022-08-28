@@ -1,0 +1,10 @@
+
+
+z:/>c:
+c:/>md myreact
+c:/>cd myreact
+c:/>myreact>npm install -g create-react-app
+
+
+
+c:/myreact>npx create-react-app myproject

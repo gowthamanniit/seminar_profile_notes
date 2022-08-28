@@ -1,0 +1,160 @@
+Create a Class Component
+==========================
+When creating a React component, the component's name must start with an upper case letter.
+
+The component has to include the extends React.Component statement
+The component also requires a render() method, this method returns HTML.
+
+Example
+Create a Class component called Car
+
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+Now your React application has a component called Car, which returns a <h2> element.
+
+To use this component in your application, use similar syntax as normal HTML: <Car />
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+
+ReactDOM.render(<Car />, document.getElementById('root'));
+===========================================Component Constructor==========================================
+If there is a constructor() function in your component, 
+this function will be called when the component gets initiated.
+
+The constructor function is also where you honor 
+the inheritance of the parent component by including the super() statement.
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Student extends React.Component {
+  constructor() {
+    super();
+    this.state = {name: "gowthaman"};
+  }
+  render() {
+    return <h2>I am a {this.state.name} Car!</h2>;
+  }
+}
+
+ReactDOM.render(<Student />, document.getElementById('root'));
+======================================props basic=============================================
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Car(props) {
+  return <h2>I am a {props.color} Car!</h2>;
+}
+
+ReactDOM.render(<Car color="red"/>, document.getElementById('root'));
+===================================Props in the Constructor=======================================================
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h2>I am a {this.props.model}!</h2>;
+  }
+}
+
+ReactDOM.render(<Car model="Mustang"/>, document.getElementById('root'));
+=======================================React Class Component State===========================================================
+React Class components have a built-in state object.
+
+You might have noticed that we used state earlier in the component constructor section.
+
+The state object is where you store property values that belongs to the component.
+
+When the state object changes, the component re-renders.
+
+Creating the state Object
+The state object is initialized in the constructor:
+
+
+Using the state Object
+Refer to the state object anywhere in the component by using 
+syntax:
+this.state.propertyname
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Car />, document.getElementById('root'));
+
+================================================Changing the state Object===========================================
+To change a value in the state object, use the this.setState() method.
+
+When a value in the state object changes, the component will re-render, meaning that the output will change according to the new value(s).
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Car extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      brand: "Ford",
+      model: "Mustang",
+      color: "red",
+      year: 1964
+    };
+  }
+  changeColor = () => {
+    this.setState({color: "blue"});
+  }
+  render() {
+    return (
+      <div>
+        <h1>My {this.state.brand}</h1>
+        <p>
+          It is a {this.state.color}
+          {this.state.model}
+          from {this.state.year}.
+        </p>
+        <button
+          type="button"
+          onClick={this.changeColor}
+        >Change color</button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Car />, document.getElementById('root'));
