@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+#maindiv
+{
+	width:97%;
+/*	background-color:green;*/
+	display:flex;
+	box-shadow:5px 5px 4px 0px gray;
+	border:7px ridge blue;
+	padding-top:50px;
+	padding-bottom:50px;
+	background-image:url("d:/images/pic1.jfif");
+	background-size:cover;
+	border-radius:20px;
+}
+#rightdiv
+{
+	width:85%;
+}
+h2
+{
+
+	text-align:center;
+}
+#tb,#pw
+{
+	border:0;
+	outline:0;
+	margin-top:35px;
+	background-color:transparent;
+	border-bottom:5px solid yellow;
+	font-size:20px;
+	text-align:center;
+	color:blue;
+}
+#sb
+{
+	margin-top:18px;
+	border-radius:20px;
+}
+#sb:hover
+{
+	
+	cursor:pointer;
+	background-color:yellow;
+	font-size:18px;
+}
+#rimg
+{
+	width:75px;
+	border-radius:50%;
+	position:absolute;
+	top:20px;
+	right:50px;
+	border:3px double blue;
+	outline-color:red;
+	outline-width:3px;
+	outline-style:ridge;
+	outline-offset:5px;
+}
+
+</style>
+<body>
+<h2>Login<br><img src="d:/images/gowtham.jfif" id="rimg"></h2>
+	
+<div id="maindiv">
+<div id="leftdiv">
+	<img src="d:/images/pic1.jfif">
+</div>
+<div id="rightdiv" align="center">
+<div>
+<form action="next.html" method="post">
+<input id="tb" type="text" placeholder="Enter User Name here" name="un"><br>
+<input id="pw" type="password" placeholder="Enter password here" name="pw"><br>
+<input id="sb" type="submit" value="Login">
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
